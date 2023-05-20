@@ -15,8 +15,16 @@ Pass these as parameters to the constructor:
 # Pseudocode
 '''
 
-1. Create constructor (Numbers to calculate, operation register, result register, calculator name)
-2. Create methods (solve, clear, get result, get name)
+1. Create constructor (Calculator name, first number, second number, operation register, result register)
+2. Create methods (solve, clear, get result, get name, set first and second number)
 3. Look out for errors!
 
 '''
+
+class Calculator:
+    def __init__(self, name:str) -> None:
+        self.name = name
+        self.operation:str = ''
+        self.result:float = 0
+        self.first_num:float = 0
+        self.second_num:float = 0
