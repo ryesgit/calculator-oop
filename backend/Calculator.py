@@ -84,4 +84,7 @@ class Calculator:
                 raise ValueError("Illegal positioning. To get first number, use 0 as position, or 1 for second number")
 
     def get_name(self) -> str:
-        return self.name  
+        return self.name
+    
+    def get_result(self) -> float:
+        return self.result
