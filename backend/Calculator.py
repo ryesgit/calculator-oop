@@ -59,7 +59,7 @@ class Calculator:
             case _:
                 raise ValueError("Operation is not supported.")
             
-    def set_number(self, number, position) -> None:
+    def set_number(self, number:float, position:int) -> None:
 
         try:
             self.first_num = float(self.first_num)
@@ -73,3 +73,12 @@ class Calculator:
                 self.second_num = number
             case _:
                 raise ValueError("Illegal positioning. To change first number, use 0 as position, or 1 for second number")
+
+    def get_number(self, position:int) -> float:
+        match position:
+            case 0:
+                return self.first_num
+            case 1:
+                return self.second_num
+            case _:
+                raise ValueError("Illegal positioning. To get first number, use 0 as position, or 1 for second number")
