@@ -58,3 +58,18 @@ class Calculator:
                     raise ZeroDivisionError("You are not allowed to divide by zero. Sorry!")
             case _:
                 raise ValueError("Operation is not supported.")
+            
+    def set_number(self, number, position) -> None:
+
+        try:
+            self.first_num = float(self.first_num)
+            self.second_num = float(self.second_num)
+        except ValueError:
+            raise ValueError("Parameter must be a floating point number or convertible to one.")
+        match position:
+            case 0:
+                self.first_num = number
+            case 1:
+                self.second_num = number
+            case _:
+                raise ValueError("Illegal positioning. To change first number, use 0 as position, or 1 for second number")
