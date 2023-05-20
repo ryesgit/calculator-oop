@@ -16,7 +16,7 @@ Pass these as parameters to the constructor:
 '''
 
 1. Create constructor (Calculator name, first number, second number, operation register, result register)
-2. Create methods (solve, clear, get result, get name, set first and second number)
+2. Create methods (solve, clear, get result, get name, set first and second number, calculate)
 3. Look out for errors!
 
 '''
@@ -28,3 +28,33 @@ class Calculator:
         self.result:float = 0
         self.first_num:float = 0
         self.second_num:float = 0
+
+    def solve(self) -> None:
+        # Calculates given the first number, second number, and the operation
+        # Throws error if one of them is missing, an incorrect value, or operation is not supported!
+        result = self.__calculate()
+        self.result = result
+
+    def __calculate(self) -> None:
+        # If one of the arguments is missing, throw an error
+        if not(self.first_num and self.second_num and self.operation):
+            raise NameError('Uh oh! Some of the arguments is missing.')
+        try:
+            self.first_num = float(self.first_num)
+            self.second_num = float(self.second_num)
+        except ValueError:
+            raise ValueError("You must input numbers!")
+        match self.operation:
+            case 'add':
+                return self.first_num + self.second_num
+            case 'subtract':
+                return self.first_num - self.second_num
+            case 'multiply':
+                return self.first_num * self.second_num
+            case 'divide':
+                try:
+                    return self.first_num / self.second_num
+                except ZeroDivisionError:
+                    raise ZeroDivisionError("You are not allowed to divide by zero. Sorry!")
+            case _:
+                raise ValueError("Operation is not supported.")
