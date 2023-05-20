@@ -88,6 +88,9 @@ class Calculator:
     
     def get_result(self) -> float:
         return self.result
+
+    def get_operation(self) -> str:
+        return self.operation
     
     def clear(self) -> None:
         self.first_num = 0
