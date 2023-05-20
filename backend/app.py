@@ -20,3 +20,17 @@ def create_calculator():
     calculator = Calculator(name)
     # Add calculator to calculators dictionary
     calculators[name] = calculator
+    calc_info = _dissect_calc_info(calculator)
+    return jsonify(calc_info), 200
+
+def _dissect_calc_info(calculator:Calculator):
+    calc_info = {
+        "name": calculator.get_name(),
+        "first_num": calculator.get_number(0),
+        "second_num": calculator.get_number(1),
+        "result": calculator.get_result(),
+        "operation": calculator.get_operation()
+    }
+
+    return calc_info
+
