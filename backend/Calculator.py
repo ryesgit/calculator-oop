@@ -82,3 +82,6 @@ class Calculator:
                 return self.second_num
             case _:
                 raise ValueError("Illegal positioning. To get first number, use 0 as position, or 1 for second number")
+
+    def get_name(self) -> str:
+        return self.name  
