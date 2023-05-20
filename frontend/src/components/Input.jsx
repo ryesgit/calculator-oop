@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../calculator.css'
+import '../calculator.css';
 import Button from './Button.jsx'
 const Input = () => {
 

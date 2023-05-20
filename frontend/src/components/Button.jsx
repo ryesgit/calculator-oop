@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import NumberContext from "../context/numberContext.js";
-import { baseURL } from "../locals/constants.js";
+import NumberContext from "../../context/numberContext.js";
+import { baseURL } from "../../locals/constants.js";
 
 const Button = ({className, content, children}) => {
 
@@ -63,8 +63,6 @@ const Button = ({className, content, children}) => {
                         }
 
                         const result = await res.json();
-
-                        setResult(result)
                         // Empty out numbers array
                         setNumbers([])
                         // Reset number

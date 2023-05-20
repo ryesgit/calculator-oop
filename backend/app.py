@@ -23,6 +23,18 @@ def create_calculator():
     calc_info = _dissect_calc_info(calculator)
     return jsonify(calc_info), 200
 
+@app.route('/calculator')
+def get_all_calculators():
+    all_calculator_infos = []
+
+    calculator:Calculator
+    for calculator in calculators.values():
+        calc_info = _dissect_calc_info(calculator)
+        all_calculator_infos.append(calc_info)
+    
+    return jsonify(all_calculator_infos), 200
+
+
 def _dissect_calc_info(calculator:Calculator):
     calc_info = {
         "name": calculator.get_name(),
@@ -33,4 +45,5 @@ def _dissect_calc_info(calculator:Calculator):
     }
 
     return calc_info
+
 
