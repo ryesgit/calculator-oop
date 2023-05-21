@@ -5,7 +5,7 @@ const Output = () => {
     const { numbers, number, result, operation } = useContext(NumberContext);
   return (
     <div className=' bg-white w-full h-1/4 opacity-75'>
-        <p>{numbers.length > 0 ? numbers.map(number => number) : ''} {operation ? operation : ''} {number}</p>
+        <p>{(numbers.length > 0 && operation) ? numbers.map(number => number) : ''} {operation ? operation : ''} {number}</p>
         <p>Result: {result}</p>
     </div>
   )
