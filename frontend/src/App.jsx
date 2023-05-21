@@ -27,6 +27,16 @@ function App() {
         "Content-Type": "application/json"
       }
     });
+    // Name is in use!
+    if(res.status == 405) {
+      const message = await res.json();
+      alert(message);
+      return
+    }
+
+    // If name is empty, then ignore.
+    if(!name) return
+
     const calculator = await res.json();
 
     setCalculators(prev => [...prev, calculator]);

@@ -17,6 +17,11 @@ calculators = {}
 def create_calculator():
     req_body = request.json
     name = req_body.get('name')
+
+    # Throw error if calculator name is in use
+    if(name in calculators):
+        return jsonify(f"The name '{name}' already in use"), 405
+
     calculator = Calculator(name)
     # Add calculator to calculators dictionary
     calculators[name] = calculator
