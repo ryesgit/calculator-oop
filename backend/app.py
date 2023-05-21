@@ -55,8 +55,10 @@ def solve(id):
         calculator.solve()
         result = calculator.get_result()
         return jsonify(result), 200
-    except ValueError:
-        print("Value Error!")
+    except NameError:
+        return jsonify("Some of the arguments are missing"), 404
+    except ZeroDivisionError:
+        return jsonify("Division by Zero is not allowed"), 400
 
 
 

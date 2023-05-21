@@ -19,19 +19,23 @@ const Calculator = ({ name: calcInitialName, first_num, second_num, operation: c
       })
       if(unfilled_number) return
       
-      (async() => {
-        const res = await fetch(`${baseURL}/calculator/${name}/solve`, {
-          method: 'POST',
-          body: JSON.stringify({ numbers, operation }),
-          headers: {
-            "Content-Type": "application/json"
-          }
-        });
-        const result = await res.json()
-        console.log('Gotcha! ' + result)
-        setResult(result)
-      })();
-    }, [numbers]);
+      try {
+        (async() => {
+          const res = await fetch(`${baseURL}/calculator/${name}/solve`, {
+            method: 'POST',
+            body: JSON.stringify({ numbers, operation }),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          });
+          const result = await res.json()
+          console.log('Gotcha! ' + result)
+          setResult(result)
+        })();
+      } catch(err) {
+        alert(err.toString());
+      }
+      }, [numbers]);
 
   return (
     <div className=' aspect-square w-1/2 md:w-auto md:h-1/2 mx-auto my-auto'>
