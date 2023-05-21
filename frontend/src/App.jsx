@@ -20,11 +20,13 @@ function App() {
 
   return (
     <>
+      <main className=' bg-slate-900 h-screen w-screen m-0 p-0 flex flex-col'>
       {
         calculators.map(calculator => {
           return <Calculator name={calculator.name} first_num={calculator.first_num} second_num={calculator.second_num} operation={calculator.operation} result={calculator.result}/>
         })
       }
+      </main>
     </>
   )
 }
