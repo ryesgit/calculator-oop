@@ -58,7 +58,10 @@ class Calculator:
                     raise ZeroDivisionError("You are not allowed to divide by zero. Sorry!")
             case _:
                 raise ValueError("Operation is not supported.")
-            
+
+    def set_operation(self, operation:str) -> None:
+        self.operation = operation
+
     def set_number(self, number:float, position:int) -> None:
 
         try:
