@@ -10,7 +10,6 @@ const Button = ({className, content, children}) => {
 
         if(className == 'operator') {
             // Add this number to the numbers to do operations to.
-            console.log(number);
             operation ? setNumbers(prev => { return { ...prev, second_num: number } }) : setNumbers(prev => { return { ...prev, first_num: number }});
             // Check what kind of operation user chose
             switch(e.target.textContent) {
@@ -41,13 +40,15 @@ const Button = ({className, content, children}) => {
             switch(e.target.textContent) {
                 case '=':
                     
-                    setNumbers()
+                    setNumbers(prev => { return { ...prev, second_num: number }})
+                    break;
 
                 case 'CLEAR':
                     setNumbers({ first_num: '', second_num: '' });
                     setNumber('');
                     setOperation('');
                     setResult('');
+                    break;
             }
         }
     }
