@@ -10,7 +10,8 @@ const Button = ({className, content, children}) => {
 
         if(className == 'operator') {
             // Add this number to the numbers to do operations to.
-            setNumbers(prev => [...prev, number])
+            console.log(number);
+            operation ? setNumbers(prev => { return { ...prev, second_num: number } }) : setNumbers(prev => { return { ...prev, first_num: number }});
             // Check what kind of operation user chose
             switch(e.target.textContent) {
                 case '+':
@@ -40,37 +41,10 @@ const Button = ({className, content, children}) => {
             switch(e.target.textContent) {
                 case '=':
                     
-                    (async() => {
-                        
-
-                            const data = {
-                                mode: operation,
-                                num1: numbers[0],
-                                num2: number
-                            }
-
-                            const res = await fetch(`${baseURL}/calculate`, {
-                            method: 'POST',
-                            body: JSON.stringify(data),
-                            headers: {
-                                "Content-Type": "application/json"
-                            }
-                        })
-
-                        if(res.status == 400) {
-                            const error = await res.json();
-                            return alert(error)
-                        }
-
-                        const result = await res.json();
-                        // Empty out numbers array
-                        setNumbers([])
-                        // Reset number
-                    })();
-                    setNumber('')
+                    setNumbers()
 
                 case 'CLEAR':
-                    setNumbers([]);
+                    setNumbers({ first_num: '', second_num: '' });
                     setNumber('');
                     setOperation('');
                     setResult('');

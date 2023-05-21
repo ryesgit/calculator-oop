@@ -5,7 +5,7 @@ import NumberContext from '../../context/numberContext.js'
 
 const Calculator = ({ name: calcInitialName, first_num, second_num, operation: calcInitialOperation, result: calcInitialResult }) => {
     const [name, setName] = useState(calcInitialName)
-    const [numbers, setNumbers] = useState([first_num, second_num]);
+    const [numbers, setNumbers] = useState({ first_num: '', second_num: ''  });
     const [number, setNumber] = useState('');
     const [operation, setOperation] = useState(calcInitialOperation);
     const [result, setResult] = useState(calcInitialResult);
