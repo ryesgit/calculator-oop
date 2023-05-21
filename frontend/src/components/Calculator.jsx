@@ -31,11 +31,18 @@ const Calculator = ({ name: calcInitialName, first_num, second_num, operation: c
           const result = await res.json()
           console.log('Gotcha! ' + result)
           setResult(result)
+          clear();
         })();
       } catch(err) {
         alert(err.toString());
       }
       }, [numbers]);
+
+      const clear = () => {
+        setNumbers({ first_num: '', second_num: '' });
+        setNumber('');
+        setOperation('');
+      }
 
   return (
     <div className=' aspect-square w-1/2 md:w-auto mx-auto my-auto bg-black' style={{
