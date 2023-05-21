@@ -34,13 +34,24 @@ function App() {
 
   return (
     <>
-      <main className=' bg-slate-900 h-screen w-screen m-0 p-0 flex flex-col'>
-      {
-        calculators.map(calculator => {
-          return <Calculator name={calculator.name} first_num={calculator.first_num} second_num={calculator.second_num} operation={calculator.operation} result={calculator.result}/>
-        })
-      }
-        <button onClick={addCalculator}>Add Calculator Instance</button>
+      <main className=' bg-slate-900 h-screen w-screen m-0 p-0 flex flex-col' style={{alignItems: 'center'}}>
+      <div style={{
+        display: 'flex',
+        flexGrow: '1',
+        gap: '10px'
+      }}>
+        {
+          calculators.map(calculator => {
+            return <Calculator name={calculator.name} first_num={calculator.first_num} second_num={calculator.second_num} operation={calculator.operation} result={calculator.result}/>
+          })
+        }
+      </div>
+        <button onClick={addCalculator} style={{ 
+          backgroundColor: 'gainsboro',
+          padding: "5px",
+          borderRadius: "2rem",
+          margin: "2px"
+         }}>Add Calculator Instance</button>
       </main>
     </>
   )

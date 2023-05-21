@@ -38,7 +38,10 @@ const Calculator = ({ name: calcInitialName, first_num, second_num, operation: c
       }, [numbers]);
 
   return (
-    <div className=' aspect-square w-1/2 md:w-auto md:h-1/2 mx-auto my-auto'>
+    <div className=' aspect-square w-1/2 md:w-auto mx-auto my-auto bg-black' style={{
+      height: 'contain',
+      padding: '0.5rem'
+    }}>
         <NumberContext.Provider value={{numbers, setNumbers, number, setNumber, operation, setOperation, result, setResult}}>
             <Output />
             <Input />
