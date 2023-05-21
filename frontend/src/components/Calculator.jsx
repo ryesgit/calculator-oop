@@ -49,6 +49,7 @@ const Calculator = ({ name: calcInitialName, first_num, second_num, operation: c
       height: 'contain',
       padding: '0.5rem'
     }}>
+        <h1 style={{color: 'white', fontWeight: 'bold'}}>{name}</h1>
         <NumberContext.Provider value={{numbers, setNumbers, number, setNumber, operation, setOperation, result, setResult}}>
             <Output />
             <Input />
