@@ -17,3 +17,6 @@ class AdvancedCalculator(Calculator):
 
     def sine(self, number) -> None:
         self.result = math.sin(number)
+
+    def cos(self, number) -> None:
+        self.result = math.cos(number)
