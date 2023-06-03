@@ -8,9 +8,12 @@ squaring numbers, returning the square root of numbers
 and lastly, performing logarithmic functions
 
 '''
-
+import math
 from Calculator import Calculator
 
 class AdvancedCalculator(Calculator):
     def __init__(self, name: str) -> None:
         super().__init__(name)
+
+    def sine(self, number) -> None:
+        self.result = math.sin(number)
