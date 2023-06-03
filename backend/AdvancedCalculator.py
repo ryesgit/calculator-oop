@@ -26,3 +26,6 @@ class AdvancedCalculator(Calculator):
 
     def square(self, number) -> None:
         self.result = math.pow(number, 2)
+
+    def square_root(self, number) -> None:
+        self.result = math.sqrt(number)
