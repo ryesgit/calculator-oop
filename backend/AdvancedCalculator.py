@@ -29,3 +29,6 @@ class AdvancedCalculator(Calculator):
 
     def square_root(self, number) -> None:
         self.result = math.sqrt(number)
+
+    def log(self, number, base) -> None:
+        self.result = math.log(number, base)
