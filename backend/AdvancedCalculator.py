@@ -20,3 +20,6 @@ class AdvancedCalculator(Calculator):
 
     def cos(self, number) -> None:
         self.result = math.cos(number)
+
+    def tan(self, number) -> None:
+        self.result = math.tan(number)
