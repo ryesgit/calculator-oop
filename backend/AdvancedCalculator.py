@@ -32,3 +32,6 @@ class AdvancedCalculator(Calculator):
 
     def log(self, number, base) -> None:
         self.result = math.log(number, base)
+
+    def ln(self, number) -> None:
+        self.result = math.log10(number)
