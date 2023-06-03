@@ -8,3 +8,9 @@ squaring numbers, returning the square root of numbers
 and lastly, performing logarithmic functions
 
 '''
+
+from Calculator import Calculator
+
+class AdvancedCalculator(Calculator):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
