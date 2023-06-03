@@ -23,3 +23,6 @@ class AdvancedCalculator(Calculator):
 
     def tan(self, number) -> None:
         self.result = math.tan(number)
+
+    def square(self, number) -> None:
+        self.result = math.pow(number, 2)
